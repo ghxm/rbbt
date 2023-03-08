@@ -43,7 +43,7 @@ bbt_write_bib <- function(path,
   assert_bbt()
   readr::write_file(
     bbt_bib(
-      setdiff(keys, ignore),
+      setdiff_regex(keys, ignore, regex_char = " "),
       translator,
       library_id = library_id,
       .action = filter
